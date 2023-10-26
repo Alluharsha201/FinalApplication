@@ -1,0 +1,30 @@
+<!-- src/app/player-list/player-list.component.html -->
+<div class="container">
+    <h2>Player List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Team</th>
+          <th>Position</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players">
+          <td>{{ player.id }}</td>
+          <td>{{ player.name }}</td>
+          <td>{{ player.age }}</td>
+          <td>{{ player.team }}</td>
+          <td>{{ player.position }}</td>
+          <td>
+            <a [routerLink]="['/edit', player.id]">Edit</a>
+            <button (click)="deletePlayer(player.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
